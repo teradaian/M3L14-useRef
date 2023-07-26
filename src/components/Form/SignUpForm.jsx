@@ -10,6 +10,7 @@ const SignUpForm = ({ handleAddUser }) => {
     password: '',
     confirmPassword: ''
   })
+  const [validForm, isValidForm] = useState(false)
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
@@ -57,7 +58,7 @@ const SignUpForm = ({ handleAddUser }) => {
           onChange={handleChange}
         />
 
-        <button type="submit">SUBMIT</button>
+        <button type="submit" disabled={!validForm}>SUBMIT</button>
 
       </form>
     </main>
