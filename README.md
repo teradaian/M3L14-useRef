@@ -30,7 +30,7 @@ Using a controlled form (provided for you) and the useRef hook, ensure that the 
 - Run `npm run dev` and navigate to `http://localhost:5173/` to view the app in your browser.
 - This is a very rudimentary React app, scoped down to only the necessities. As the backend isn't finished yet, for now users are simply being stored in state in `app.jsx`. 
 - If you try to use the signup form to create a new user, you may notice a few issues. For one, when the user tries to submit an invalid form, they are prompted with redundent messages (they already know the length limit restrictions). Secondly, even if the users `password` and `confirm password` entries are not identical, the form will still submit.
-- Take a minute to look over `src/components/SignUpForm/SignUpForm.jsx` to familiarize yourself with the existing form code you'll be working with.
+- Take a minute to look over `src/components/SignUpForm/SignUpForm.jsx` to familiarize yourself with the existing form code you'll be working with. In partcular, note that this is a controlled form, and that the inputs have various constraint attributes, such as `required` or `minLength`.
 
 ### Step 1
 
@@ -52,4 +52,15 @@ Using a controlled form (provided for you) and the useRef hook, ensure that the 
 ### Step 3
 
 - Your coworker came across the [.checkValidity()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity) method and thinks it might be a good solution now that you have access to the form element. As always, head to the docs to review what it does!
-- `.checkValidity()` 'checks whether the element has any constraints and whether it satisfies them' - what element should we 
+- Within the existing `handleChange` function, set `validForm` state to be `true` or `false` based on the result of invoking `.checkValidity()` on the current property of your ref object.
+- With that done, you should be able to fill out the signup form and see the submit button become enabled when the form passes all validity checks. 
+
+### Step 4
+
+- There's just one more problem to solve - the password and confirm password inputs should match, or else there's not much point of having the user confirm their password at all. 
+- Revise the `handleChange` function to also check if the passwords match, and to only set `validForm` to true if both `.checkValidity()` returns true and password and confirm password match.
+
+- Note: Think about what you know about state and the useState setter function! Can we rely on `form.password` or `form.confirmPassword` to be up to date inside of `handleChange`? What might we need to reference instead? 
+
+- Finally, test the form with correctly matching and incorrectly matching passwords! If the submit button acts as required, then you're done!
+
