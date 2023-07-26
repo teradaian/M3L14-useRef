@@ -46,7 +46,7 @@ const SignUpForm = ({ handleAddUser }) => {
         
 
         <label htmlFor="password-input">
-          Password
+          Password 
           <i 
             className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`} 
             onClick={() => setShowPassword(!showPassword)}>
@@ -67,8 +67,7 @@ const SignUpForm = ({ handleAddUser }) => {
           Confirm Password
           <i 
             className={`fa-solid ${showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'}`} 
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
-          </i>
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}></i>
         </label>
         <input
           required
