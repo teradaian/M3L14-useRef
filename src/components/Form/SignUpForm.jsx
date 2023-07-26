@@ -2,12 +2,22 @@ import { useState } from 'react'
 
 import './SignUpForm.css'
 
-const SignUpForm = () => {
-  const [formData, setFormData] = useState({
+const SignUpForm = ({ handleAddUser }) => {
+  const [form, setForm] = useState({
     username: '',
     password: '',
     confirmPassword: ''
   })
+
+  const handleChange = ({ target }) => {
+    setForm({ ...form, [target.name]: target.value })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    handleAddUser(form)
+  }
+
   return (
     <main className="new">
       <form autoComplete="off">
@@ -18,6 +28,8 @@ const SignUpForm = () => {
           name="username"
           id="username-input"
           placeholder="username"
+          value={form.username}
+          onChange={handleChange}
         />
 
         <label htmlFor="password-input">Password</label>
@@ -27,6 +39,8 @@ const SignUpForm = () => {
           name="password"
           id="password-input"
           placeholder="Password"
+          value={form.password}
+          onChange={handleChange}
         />
 
         <label htmlFor="confirm-password-input">Confirm Password</label>
@@ -36,6 +50,8 @@ const SignUpForm = () => {
           name="confirmPassword"
           id="confirm-password-input"
           placeholder="Confirm Password"
+          value={form.confirmPassword}
+          onChange={handleChange}
         />
 
         <button type="submit">SUBMIT</button>
