@@ -58,9 +58,9 @@ Using a controlled form (provided for you) and the useRef hook, ensure that the 
 ### Step 4
 
 - There's just one more problem to solve - the password and confirm password inputs should match, or else there's not much point of having the user confirm their password at all. 
-- Revise the `handleChange` function to also check if the passwords match, and to only set `validForm` to true if both `.checkValidity()` returns true and password and confirm password match.
+- Revise the `handleChange` function to also check if the passwords match, and to only set `validForm` to true if both `.checkValidity()` returns true, and password and confirm password match.
 
 - Note: Think about what you know about state and the useState setter function! Can we rely on `form.password` or `form.confirmPassword` to be up to date inside of `handleChange`? What might we need to reference instead? 
 
-- Finally, test the form with correctly matching and incorrectly matching passwords! If the submit button acts as required, then you're done!
+- Test the form with correctly matching and incorrectly matching passwords! If the submit button acts as required, then you're done!
 
