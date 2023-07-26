@@ -1,7 +1,7 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav/Nav'
-import Form from './components/Form/Form' 
+import SignUpForm from './components/Form/SignUpForm' 
 import Landing from './pages/Landing/Landing'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <Nav />
     <Routes>
       <Route path='/' element={<Landing />} />
-      <Route path='/new' element={<Form />} />
+      <Route path='/signUp' element={<SignUpForm />} />
     </Routes>
     </>
 
