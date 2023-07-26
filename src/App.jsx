@@ -1,12 +1,16 @@
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
 import Form from './components/Form/Form' 
-import Default from './pages/Default/Default'
+import Landing from './pages/Landing/Landing'
 
 function App() {
 
   return (
-    <Default />
-    <Form />
+    <Routes>
+      <Route path='/' element={<Landing />} />
+      <Route path='/new' element={<Form />} />
+    </Routes>
+
   )
 }
 
