@@ -7,10 +7,11 @@ const Landing = ({ users }) => {
   ))
 
   return (
-    <div>
+    <section>
+      <h1>{users.length > 0 && 'Users:' }</h1>
       { usersList }
-    </div>
-   );
+    </section>
+   )
 }
  
 export default Landing;
