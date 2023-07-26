@@ -16,8 +16,8 @@ Using a controlled form (provided for you) and the useRef hook, ensure that the 
 
 ![requirements](./assets/banner-requirements.png)
 
-- Reference the form element with useRef
-- Add functionality so that the submit button conditionally enables or disables based on the validity (as outlined above) of the referenced form element.
+- Reference a form element with the useRef hook.
+- Add functionality so that the submit button conditionally enables or disables based on the validity (as outlined above) of the form entries.
 
 ---
 
@@ -28,26 +28,26 @@ Using a controlled form (provided for you) and the useRef hook, ensure that the 
 - Fork and clone [this](https://git.generalassemb.ly/SEI-Standard-Curriculum/M3L14-useRef-wbp) repository
 - Run `npm i`
 - Run `npm run dev` and navigate to `http://localhost:5173/` to view the app in your browser.
-- This is a very rudimentary React app, scoped down to only the necessities. As the backend isn't finished yet, for now users are simply being stored in state in `app.jsx`. 
+- This is a very rudimentary React app, scoped down to only the necessities. As the backend isn't finished yet, for now `users` are simply being stored in state in `app.jsx`. 
 - If you try to use the signup form to create a new user, you may notice a few issues. For one, when the user tries to submit an invalid form, they are prompted with redundent messages (they already know the length limit restrictions). Secondly, even if the users `password` and `confirm password` entries are not identical, the form will still submit.
-- Take a minute to look over `src/components/SignUpForm/SignUpForm.jsx` to familiarize yourself with the existing form code you'll be working with. In partcular, note that this is a controlled form, and that the inputs have various constraint attributes, such as `required` or `minLength`.
+- Take a minute to look over `src/components/SignUpForm/SignUpForm.jsx` to familiarize yourself with the existing form code you'll be working with. In particular, note that this is a controlled form, and that the inputs have various constraint attributes, such as `required` or `minLength`.
 
 ### Step 1
 
 - In `SignUpForm.jsx`, add new state to keep track of if the form is valid or not. Give this new `validForm` state an initial value of `false`, as by default the form state will be invalid. 
-- Add a `disabled` attribute to the form's submit button. What should it equal such that when the form is valid, the button is not disabled?
+- Add a [disabled](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) attribute to the form's submit button. What should `disabled` equal so that when the form is valid, the button is not disabled?
 - If done correctly, you should see that the submit button has changed to a gray color, and no longer lets the user click on it. 
 
 ### Step 2
 
-- Next, we'll need some way to reference our form so that we can access it and check its validity.
+- Next, you'll need some way to reference your form so that you can access it and check its validity.
 - Import `useRef` and declare a ref object called `formElement`. You can give it an initial value of null.
 - Then, pass `formElement` as the ref attribute on your form.
 - Add the following above the return statement in `SignUpForm.jsx`
   ```javascript
   console.log(formElement.current)
   ```
-- You should see that this initially logs `null`, and that once you type something into one of your inputs it now logs the form element itself. 
+- You should see that this initially logs `null`, and that once you type something into one of your inputs it now logs the form element itself. Once you've confirmed this, you can remove the console.log.
 
 ### Step 3
 
