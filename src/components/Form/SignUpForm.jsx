@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import './SignUpForm.css'
 
 const SignUpForm = ({ handleAddUser }) => {
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     username: '',
     password: '',
@@ -16,18 +18,19 @@ const SignUpForm = ({ handleAddUser }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     handleAddUser(form)
+    navigate('/')
   }
 
   return (
     <main className="new">
-      <form autoComplete="off">
+      <form autoComplete="off" onSubmit={handleSubmit}>
         <label htmlFor="username-input">Username</label>
         <input
           required
           type="text"
           name="username"
           id="username-input"
-          placeholder="username"
+          placeholder="Username"
           value={form.username}
           onChange={handleChange}
         />
