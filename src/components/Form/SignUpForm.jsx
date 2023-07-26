@@ -1,34 +1,41 @@
+import { useState } from 'react'
+
 import './SignUpForm.css'
 
 const SignUpForm = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+    confirmPassword: ''
+  })
   return (
     <main className="new">
       <form autoComplete="off">
-        <label htmlFor="name-input">Username</label>
+        <label htmlFor="username-input">Username</label>
         <input
           required
           type="text"
-          name="name"
-          id="name-input"
-          placeholder="Name"
+          name="username"
+          id="username-input"
+          placeholder="username"
         />
 
-        <label htmlFor="name-input">Password</label>
+        <label htmlFor="password-input">Password</label>
         <input
           required
           type="password"
-          name="name"
-          id="name-input"
-          placeholder="Name"
+          name="password"
+          id="password-input"
+          placeholder="Password"
         />
 
-        <label htmlFor="name-input">Confirm Password</label>
+        <label htmlFor="confirm-password-input">Confirm Password</label>
         <input
           required
           type="password"
-          name="name"
-          id="name-input"
-          placeholder="Name"
+          name="confirmPassword"
+          id="confirm-password-input"
+          placeholder="Confirm Password"
         />
 
         <button type="submit">SUBMIT</button>
