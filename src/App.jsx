@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import Nav from './components/Nav/Nav'
-import SignUpForm from './components/Form/SignUpForm' 
+import SignUpForm from './components/SignUpForm/SignUpForm' 
 import Landing from './pages/Landing/Landing'
 
 import './App.css'

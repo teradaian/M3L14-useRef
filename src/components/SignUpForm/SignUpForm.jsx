@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import './SignUpForm.css'
@@ -13,14 +13,10 @@ const SignUpForm = ({ handleAddUser }) => {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
-  const [validForm, setValidForm] = useState(false)
-  const formElement = useRef()
 
   const handleChange = ({ target }) => {
     const newFormData = { ...form, [target.name]: target.value }
     setForm(newFormData)
-
-    setValidForm(formElement.current.checkValidity() && newFormData.password === newFormData.confirmPassword)
   }
 
   const handleSubmit = (event) => {
@@ -31,7 +27,7 @@ const SignUpForm = ({ handleAddUser }) => {
 
   return (
     <main className="new">
-      <form autoComplete="off" onSubmit={handleSubmit} ref={formElement}>
+      <form autoComplete="off" onSubmit={handleSubmit}>
         <label htmlFor="username-input">Username</label>
         <input
           required
@@ -46,7 +42,7 @@ const SignUpForm = ({ handleAddUser }) => {
         
 
         <label htmlFor="password-input">
-          Password
+          Password (8 characters minimum)
           <i 
             className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`} 
             onClick={() => setShowPassword(!showPassword)}>
@@ -81,7 +77,7 @@ const SignUpForm = ({ handleAddUser }) => {
           onChange={handleChange}
         />
 
-        <button type="submit" disabled={!validForm}>SUBMIT</button>
+        <button type="submit">SUBMIT</button>
 
       </form>
     </main>

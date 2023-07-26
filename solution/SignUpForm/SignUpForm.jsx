@@ -14,7 +14,7 @@ const SignUpForm = ({ handleAddUser }) => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   const [validForm, setValidForm] = useState(false)
-  const formElement = useRef()
+  const formElement = useRef(null)
 
   const handleChange = ({ target }) => {
     const newFormData = { ...form, [target.name]: target.value }
@@ -46,7 +46,7 @@ const SignUpForm = ({ handleAddUser }) => {
         
 
         <label htmlFor="password-input">
-          Password 
+          Password (8 characters minimum)
           <i 
             className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`} 
             onClick={() => setShowPassword(!showPassword)}>
