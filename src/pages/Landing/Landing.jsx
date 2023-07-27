@@ -7,7 +7,7 @@ const Landing = ({ users }) => {
   ))
 
   return (
-    <section>
+    <section style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
       <h1>{users.length > 0 && 'Users:' }</h1>
       { usersList }
     </section>
