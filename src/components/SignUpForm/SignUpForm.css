@@ -1,9 +1,10 @@
 .new {
-  display: flex;
   color: white;
   min-height: 100%;
+  min-width: 100%;
   margin-top: 60px;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: center;
 }
 
 form {
@@ -27,9 +28,16 @@ button {
   box-shadow: inset 5px 5px 6px #e0e5e6, inset -5px -5px 6px #f8fdfe;
 }
 
+input {
+  box-sizing: border-box;
+}
+
 label {
+  display: flex;
+  justify-content: space-between;
   font-size: 16px;
   font-weight: 600;
+  min-width: 400px;
 }
 
 input:focus,

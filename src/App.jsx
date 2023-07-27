@@ -5,8 +5,6 @@ import Nav from './components/Nav/Nav'
 import SignUpForm from './components/SignUpForm/SignUpForm' 
 import Landing from './pages/Landing/Landing'
 
-import './App.css'
-
 function App() {
   const [users, setUsers] = useState([])
 

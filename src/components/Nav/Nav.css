@@ -1,8 +1,10 @@
 nav {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 nav a {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  padding: 1.5rem;
 }
