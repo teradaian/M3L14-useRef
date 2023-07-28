@@ -10,7 +10,7 @@ The Signup form has the following requirements in order to be considered valid:
 1. The username cannot be less than 8 characters long
 1. The password and the confirm password must be at least 8 characters long, and must match! 
 
-Using a controlled form (provided for you) and the useRef hook, ensure that the submit button toggles from its default disabled state when all of the above critera are met! You will not need to write any CSS to solve this problem. 
+Using a controlled form (provided for you) and the useRef hook, ensure that the submit button toggles from its default disabled state when all of the above critera are met! You will not need to write any CSS to solve this problem; styling for the disabled button has already been provided.
 
 ---
 
