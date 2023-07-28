@@ -49,8 +49,8 @@ const SignUpForm = ({ handleAddUser }) => {
           Password (8 characters minimum)
           <i 
             className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`} 
-            onClick={() => setShowPassword(!showPassword)}>
-          </i>
+            onClick={() => setShowPassword(!showPassword)}
+          ></i>
         </label>
         <input
           required
@@ -67,7 +67,8 @@ const SignUpForm = ({ handleAddUser }) => {
           Confirm Password
           <i 
             className={`fa-solid ${showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'}`} 
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}></i>
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          ></i>
         </label>
         <input
           required
